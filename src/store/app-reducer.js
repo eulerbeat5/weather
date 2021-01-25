@@ -1,8 +1,9 @@
 import { SET_USERNAME, SET_LOCATION } from "./actions";
+import { getItem } from "../services/storage";
 
 export const initialState = {
-    username: "",
-    location: "",
+    username: getItem("username"),
+    location: getItem("location"),
 };
 
 export const appReducer = (state, action) => {

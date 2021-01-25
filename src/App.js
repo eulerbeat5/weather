@@ -1,21 +1,29 @@
 import "./App.css";
 
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Routes } from "./router/routes";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
+import AppContext from "./store";
 import appReducer, { initialState } from "./store/app-reducer";
 
-export const AppContext = React.createContext({ state: initialState });
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: ["Poppins"].join(","),
+    },
+});
 
 function App() {
     const [state, dispatch] = useReducer(appReducer, initialState);
     return (
-        <AppContext.Provider value={{ state, dispatch }}>
-            <BrowserRouter>
-                <Routes />
-            </BrowserRouter>
-        </AppContext.Provider>
+        <ThemeProvider theme={theme}>
+            <AppContext.Provider value={{ state, dispatch }}>
+                <BrowserRouter>
+                    <Routes />
+                </BrowserRouter>
+            </AppContext.Provider>
+        </ThemeProvider>
     );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import IntroPage from "../pages/intro/intro-page";
 import ContentPage from "../pages/content/content-page";
@@ -13,6 +13,7 @@ export const Routes = () => {
             <Route path="/content">
                 <ContentPage />
             </Route>
+            <Redirect exact from="/" to="/intro" />
         </Switch>
     );
 };
