@@ -1,9 +1,10 @@
-import { SET_USERNAME, SET_LOCATION } from "./actions";
+import { SET_USERNAME, SET_LOCATION, SET_WEATHER } from "./actions";
 import { getItem } from "../services/storage";
 
 export const initialState = {
     username: getItem("username"),
     location: getItem("location"),
+    weather: getItem("weather") || {},
 };
 
 export const appReducer = (state, action) => {
@@ -17,6 +18,11 @@ export const appReducer = (state, action) => {
             return {
                 ...state,
                 location: action.payload,
+            };
+        case SET_WEATHER:
+            return {
+                ...state,
+                weather: action.payload,
             };
         default:
             return state;

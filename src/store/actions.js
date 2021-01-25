@@ -2,6 +2,7 @@ import { setItem } from "../services/storage";
 
 export const SET_USERNAME = "SET_USERNAME";
 export const SET_LOCATION = "SET_LOCATION";
+export const SET_WEATHER = "SET_WEATHER";
 
 export const updateUsername = (dispatch, username) => {
     dispatch({
@@ -19,4 +20,16 @@ export const updateLocation = (dispatch, location) => {
     setItem("location", location);
 };
 
-export const updateWeatherData = (dispatch, location, date) => {};
+export const updateWeatherData = (dispatch, data, date) => {
+    dispatch({
+        type: SET_WEATHER,
+        payload: {
+            data,
+            date,
+        },
+    });
+    setItem("weather", {
+        data,
+        date,
+    });
+};

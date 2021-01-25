@@ -7,11 +7,35 @@
     height: 100vh;
 }
 
+.title {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 66px;
+
+    letter-spacing: 1px;
+
+    color: #14142b;
+
+    margin-bottom: 20px;
+}
+
+.message {
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 34px;
+
+    letter-spacing: 1px;
+
+    color: #4e4b66;
+
+    margin-bottom: 68px;
+}
+
 .controls {
     width: 236px;
 }
 
-.control {
+.controls > div {
     margin-bottom: 25px;
 }
 
@@ -36,28 +60,4 @@
 
 .button:hover {
     background: #713dff;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 66px;
-
-    letter-spacing: 1px;
-
-    color: #14142b;
-
-    margin-bottom: 20px;
-}
-
-.message {
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 34px;
-
-    letter-spacing: 1px;
-
-    color: #4e4b66;
-
-    margin-bottom: 68px;
 }

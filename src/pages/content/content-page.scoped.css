@@ -5,10 +5,6 @@
     height: 100vh;
 }
 
-.panels {
-    margin-top: 60px;
-}
-
 .title {
     font-weight: bold;
     font-size: 50px;
@@ -31,4 +27,87 @@
     color: #4e4b66;
 
     margin-bottom: 68px;
+}
+
+.panels {
+    margin-top: 60px;
+    height: 181px;
+    display: flex;
+    flex-direction: row;
+}
+
+.panels > .loading > * {
+    margin-bottom: 16px;
+}
+
+.panels > .card {
+    margin-right: 44px;
+}
+
+.card {
+    width: 193px;
+    height: 181px;
+    background: #eff0f6;
+    box-shadow: 0px 9px 16px rgba(17, 17, 17, 0.08);
+    border-radius: 9px;
+}
+
+.card-background {
+    height: 109px;
+    border-radius: 9px 9px 0 0;
+}
+
+.card:nth-child(5n + 1) > .card-background {
+    background: linear-gradient(114.44deg, #eb0055 0%, #f98820 100%);
+}
+
+.card:nth-child(5n + 2) > .card-background {
+    background: linear-gradient(114.44deg, #ef33ff 0%, #9e0d9b 100%);
+}
+
+.card:nth-child(5n + 3) > .card-background {
+    background: linear-gradient(114.44deg, #624af2 0%, #50ddc3 100%);
+}
+
+.card:nth-child(5n + 4) > .card-background {
+    background: linear-gradient(114.44deg, #5f2eea 0%, #c8b5ff 100%);
+}
+
+.card:nth-child(5n) > .card-background {
+    background: linear-gradient(114.44deg, #00e024 0%, #11c5a3 100%);
+}
+
+.temperature {
+    display: inline-block;
+
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    padding: 49px 0 0 16px;
+}
+
+.weekday {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: 1px;
+
+    color: #000000;
+
+    padding: 12px 0 0 16px;
+}
+
+.date {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 1px;
+
+    color: #000000;
+
+    padding: 4px 0 0 16px;
 }
