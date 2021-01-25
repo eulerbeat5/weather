@@ -18,3 +18,5 @@ export const updateLocation = (dispatch, location) => {
     });
     setItem("location", location);
 };
+
+export const updateWeatherData = (dispatch, location, date) => {};

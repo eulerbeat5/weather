@@ -1,8 +1,9 @@
 import "./content-page.scoped.css";
 
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import AppContext from "../../store";
+import { updateWeatherData } from "../../store/actions";
 
 import { Grid } from "@material-ui/core";
 
@@ -10,6 +11,12 @@ const ContentPage = () => {
     const { state, dispatch } = useContext(AppContext);
 
     const { username, location } = state;
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        updateWeatherData(dispatch, location.toLowerCase(), new Date());
+    });
 
     return (
         <Grid container justify="center" alignItems="center">
